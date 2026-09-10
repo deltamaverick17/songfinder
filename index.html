@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Identify the song in an Instagram Reel and find official listening and download options.">
+  <title>Reel → Song Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Reel Song Finder home"><span class="brand-mark">♪</span><span>reel<span class="brand-accent">song</span></span></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#history">Recent searches <span class="nav-count">3</span></a>
+    </nav>
+    <button class="icon-button" id="themeButton" type="button" aria-label="Toggle color theme" title="Toggle color theme">◐</button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span> Audio recognition, simplified</p>
+        <h1>What’s that <em>song?</em></h1>
+        <p class="hero-text">Drop in an Instagram Reel. We’ll listen for the track, find the original, and line up every useful link in one place.</p>
+      </div>
+      <div class="hero-note"><span>01</span><p>Paste a link<br>or upload a clip</p></div>
+    </section>
+
+    <section class="finder section-wrap" aria-labelledby="finder-title">
+      <div class="finder-card">
+        <div class="finder-head">
+          <div><span class="kicker">START HERE</span><h2 id="finder-title">Find a song from a Reel</h2></div>
+          <span class="secure-note">⌁ Private by default</span>
+        </div>
+        <div class="input-row">
+          <div class="url-field"><span class="url-icon">↗</span><input id="reelUrl" type="url" placeholder="Paste Instagram Reel URL" aria-label="Instagram Reel URL"><button id="clearButton" class="clear-button" type="button" aria-label="Clear URL">×</button></div>
+          <span class="or-label">or</span>
+          <label class="upload-button"><input id="audioFile" type="file" accept="audio/*,video/*"> <span>↑</span> Upload clip</label>
+          <button class="find-button" id="findButton" type="button">Identify song <span>→</span></button>
+        </div>
+        <div class="supported"><span>Works best with</span><span class="tag">public Reels</span><span class="tag">clear audio</span><span class="tag">10 sec or longer</span></div>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="result" class="result section-wrap is-hidden" aria-live="polite">
+      <div class="result-top"><div><span class="kicker">MATCH FOUND · 94% CONFIDENCE</span><h2>Your track is waiting.</h2></div><button id="newSearch" class="text-button" type="button">+ New search</button></div>
+      <div class="track-layout">
+        <div class="album-art"><div class="art-lines"></div><span>ORBIT<br>SEASON</span><small>03 / 11</small></div>
+        <div class="track-info"><p class="track-label">Identified audio</p><h3>End of Beginning</h3><p class="artist">Djo</p><div class="track-meta"><span>2022</span><span>•</span><span>2:39</span><span>•</span><span>Indie pop</span></div><div class="action-row"><a class="primary-action" href="https://www.youtube.com/results?search_query=Djo+End+of+Beginning" target="_blank" rel="noreferrer">Listen on YouTube ↗</a><button class="secondary-action" id="copyButton" type="button">Copy track info</button></div></div>
+        <div class="match-signal"><div class="signal-ring"><span>94</span><small>%</small></div><p>Strong<br>match</p></div>
+      </div>
+      <div class="links-head"><div><span class="kicker">YOUR DOWNLOAD DESK</span><h3>Find it wherever you listen</h3></div><span class="legal-note">Use downloads responsibly and respect creator rights.</span></div>
+      <div class="link-grid">
+        <a class="link-card youtube" href="https://www.youtube.com/results?search_query=Djo+End+of+Beginning" target="_blank" rel="noreferrer"><span class="service-icon">▶</span><span><strong>YouTube</strong><small>Official search results</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="https://www.youtube.com/results?search_query=Djo+End+of+Beginning+audio" target="_blank" rel="noreferrer"><span class="service-icon">♫</span><span><strong>Audio / MP3</strong><small>Open a converter you trust</small></span><span class="arrow">↗</span></a>
+        <a class="link-card" href="https://www.youtube.com/results?search_query=Djo+End+of+Beginning+official+video" target="_blank" rel="noreferrer"><span class="service-icon">▣</span><span><strong>Video / MP4</strong><small>Find the official video</small></span><span class="arrow">↗</span></a>
+      </div>
+      <p class="result-footnote">Links open YouTube search so you can choose the correct official upload before downloading. No media is stored by this demo.</p>
+    </section>
+
+    <section id="how-it-works" class="how section-wrap"><div class="section-heading"><span class="kicker">THE SHORT VERSION</span><h2>From scroll to soundtrack.</h2></div><div class="steps"><div class="step"><span>01</span><h3>Bring the Reel</h3><p>Paste a public Instagram link or upload a short clip from your device.</p></div><div class="step"><span>02</span><h3>We listen</h3><p>Our audio fingerprinting checks the sound against a vast music library.</p></div><div class="step"><span>03</span><h3>Take it with you</h3><p>Get the match plus direct paths to official YouTube audio and video.</p></div></div></section>
+
+    <section id="history" class="history section-wrap"><div class="history-head"><div><span class="kicker">LOCAL HISTORY</span><h2>Recent searches</h2></div><button class="text-button" type="button" id="clearHistory">Clear all</button></div><div class="history-list"><div><span class="mini-art art-one">♫</span><span><strong>End of Beginning</strong><small>Djo · Just now</small></span><b>94%</b></div><div><span class="mini-art art-two">♫</span><span><strong>Too Sweet</strong><small>Hozier · Yesterday</small></span><b>88%</b></div><div><span class="mini-art art-three">♫</span><span><strong>Beautiful Things</strong><small>Benson Boone · 2 days ago</small></span><b>91%</b></div></div></section>
+  </main>
+  <footer class="footer section-wrap"><span>reelsong / 2026</span><span>Made for the “what is this song” moment.</span><a href="#top">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
